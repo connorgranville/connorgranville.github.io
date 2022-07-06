@@ -51,18 +51,18 @@ nav {
     display: flex;
     align-content: center;
     justify-content: center;
-    background-image: url(resources/images/EyesLookLeft.svg);
+    background-image: url(/resources/images/EyesLookLeft.svg);
     background-size: 100px;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
     width: 9.5rem;
     border-left: 0.18rem black solid;
-    /* background-color: red; */
+    border-bottom: 0.18rem black solid;
 }
 
 .eyes:active {
-    background-image: url(resources/images/EyesClosed.svg);
+    background-image: url(/resources/images/EyesClosed.svg);
     background-size: 170px;
 }
 
