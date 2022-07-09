@@ -30,6 +30,7 @@ nav {
     display: flex;
     flex-direction: row;
     height: 9.5rem;
+    width: 100vw;
     justify-content: space-between;
     align-content: center;
     align-items: center;
@@ -130,10 +131,6 @@ nav {
     gap: 1rem;
 }
 
-.item {
-
-}
-
 .item-empty {
     height: 200px;
     width: 125px;
@@ -183,6 +180,10 @@ background: black;
 }
 
 @media only screen and (max-width: 600px){
+    body{
+        overflow: scroll;
+        grid-template-rows: 4rem 1fr;
+    }
     .nav-container{
         height: 4rem;
     }
@@ -196,6 +197,26 @@ background: black;
 
     .left-nav{
         writing-mode: vertical-rl;
+        grid-template-rows: 1fr 1fr;
         grid-template-columns: repeat(6, 1fr);
+        width: 4rem;
+    }
+
+    .main-content{
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+
+    .right-content{
+        max-width: 75%;
+    }
+
+    .right-img-contr{
+        max-width: 10rem;
+        display: inline;
+    }
+
+    .right-img{
+        max-width: 300px;
     }
 }
