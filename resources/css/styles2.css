@@ -1,48 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    /* color: seashell; */
+    cursor: url(https://bureauf.com/wp-content/themes/hue/img/cursor.svg) 16 16, auto;
+}
+
+
 html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    --nav-height: 8rem;
 }
 
 body {
-    height: 100%;
-    overflow-x: scroll;
+    height: 100vh;
+    overflow: hidden;
     margin: 0;
-    display: grid;
-    grid-template-rows: 10vh 1fr;
 }
 
 nav {
     background-color: grey;
 }
 
+h1 {
+    margin: 0;
+}
+
 .nav-container {
-    /* background-color: red; */
+    height: 100%;
+}
+
+.nav-container h1 {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 7rem;
+    line-height: var(--nav-height);
+    letter-spacing: 1rem;
 }
 
 .main-content {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    grid-template-rows: 100%;
+}
+
+.left-nav {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid black;
 }
 
 .right-content {
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-height: 90vh;
-    overflow-x: scroll;
+    justify-items: center;
+    max-height: calc(100vh - var(--nav-height));
+    overflow-x: hidden;
 }
 
 .right-img-contr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-evenly;
+    gap: 0.5rem;
 }
 
 .right-img {
-    max-width: 60%;
+    max-width: 40%;
+    max-height: 40%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+/* Track */
+::-webkit-scrollbar-track {
+background: white;
+border-left: 2px solid black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: black;
+}
+
+@media only screen and (max-width: 750px) {
+
 }

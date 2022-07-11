@@ -116,7 +116,7 @@ nav {
     overflow: scroll;
     justify-items: center;
     align-items: center;
-    overflow-x:hidden;
+    overflow-y: hidden;
 }
 
 .right-title {
