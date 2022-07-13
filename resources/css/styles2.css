@@ -32,14 +32,36 @@ h1 {
 .header-container {
     height: 100%;
     outline: 2px solid black;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-container h1 {
     --title-font-size: 7rem;
+    display: inline;
+    margin-left: 2.5%;
     font-family: 'Source Code Pro', monospace;
     font-size: var(--title-font-size);
     line-height: var(--header-height);
     letter-spacing: calc(var(--title-font-size) * 0.142);
+    transition: line-height 0.25s, font-size 0.25s;
+}
+
+.eyes {
+    background-image: url(/resources/images/EyesLookLeft.svg);
+    background-size: calc(var(--header-height) * 0.65);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: var(--header-height);
+    width: var(--header-height);
+    outline: 2px solid black;
+    transition: width 0.25s, height 0.25s, background-size 0.25s;
+}
+
+.eyes:active {
+    background-image: url(/resources/images/EyesClosed.svg);
+    background-size: calc(var(--header-height) * 1.06);
+    background-position: 0 2%;
 }
 
 .main-content {
@@ -48,6 +70,7 @@ h1 {
     display: grid;
     grid-template-columns: var(--left-main-width) var(--right-main-width);
     grid-template-rows: 100%;
+    transition: all 1s;
 }
 
 .left-nav {
@@ -118,7 +141,7 @@ border-left: 2px solid black;
 background: black;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 945px) {
 
     html {
         --header-height: 4rem;
