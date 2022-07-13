@@ -12,7 +12,7 @@ html {
     padding: 0;
     height: 100vh;
     width: 100vw;
-    --nav-height: 8rem;
+    --header-height: 10rem;
 }
 
 body {
@@ -21,38 +21,62 @@ body {
     margin: 0;
 }
 
-nav {
-    background-color: grey;
+header {
+    /* background-color: grey; */
 }
 
 h1 {
     margin: 0;
 }
 
-.nav-container {
+.header-container {
     height: 100%;
+    outline: 2px solid black;
 }
 
-.nav-container h1 {
+.header-container h1 {
+    --title-font-size: 7rem;
     font-family: 'Source Code Pro', monospace;
-    font-size: 7rem;
-    line-height: var(--nav-height);
-    letter-spacing: 1rem;
+    font-size: var(--title-font-size);
+    line-height: var(--header-height);
+    letter-spacing: calc(var(--title-font-size) * 0.142);
 }
 
 .main-content {
+    --left-main-width: 23rem;
+    --right-main-width: 1fr;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: var(--left-main-width) var(--right-main-width);
     grid-template-rows: 100%;
 }
 
 .left-nav {
-    margin: 0;
     display: flex;
     height: 100%;
     flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid black;
+}
+
+.left-nav-item {
+    display: flex;
+    margin-top: -2px;
+    outline: 2px solid black;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.left-nav-item:nth-child(n+1) {
+    margin-top: 2px;
+
+}
+
+.left-nav-title {
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: 100;
+    /* background-color: red; */
 }
 
 .right-content {
@@ -60,7 +84,7 @@ h1 {
     flex-flow: column;
     align-items: center;
     justify-items: center;
-    max-height: calc(100vh - var(--nav-height));
+    max-height: calc(100vh - var(--header-height));
     overflow-x: hidden;
 }
 
@@ -96,4 +120,30 @@ background: black;
 
 @media only screen and (max-width: 750px) {
 
+    html {
+        --header-height: 4rem;
+    }
+
+    .header-container h1 {
+        --title-font-size: 2.25rem;
+    }
+
+    .main-content {
+        --left-main-width: 3.5em;
+    }
+
+    .left-nav-title {
+        font-size: 1rem;
+        position: absolute;
+        transform: rotate(270deg);
+        transform-origin: (0 0);
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    .right-img {
+        max-width: 90%;
+        max-height: 80%;
+    }
 }
